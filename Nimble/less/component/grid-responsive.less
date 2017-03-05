@@ -1,0 +1,89 @@
+
+.row-xl{
+  max-width: @row-xl;
+  margin-left  : auto;
+	margin-right : auto;
+  position: relative;
+}
+
+.row-md{
+  max-width: @row-md;
+  margin-left  : auto;
+	margin-right : auto;
+  position: relative;
+}
+
+.row-xs{
+  max-width: @row-xs;
+  margin-left  : auto;
+	margin-right : auto;
+  position: relative;
+}
+
+.container-desktop{
+  max-width: @container-desktop;
+  margin-left  : auto;
+	margin-right : auto;
+  position: relative;
+}
+
+.container-tablet{
+  max-width: @container-tablet;
+  margin-left  : auto;
+	margin-right : auto;
+  position: relative;
+}
+.container-phone{
+	max-width: @container-phone;
+  margin-left  : auto;
+	margin-right : auto;
+  position: relative;
+}
+
+
+
+.generate-columns(@number-column);
+.generate-columns(@n, @i: 1) when (@i =< @n) {
+  // screen xl
+  .col-xl-@{i}{
+    width: ((@i * 100% / @n) - (@grid-gutter-width / @row-xl *100%) );
+    margin: 0 ((@grid-gutter-width / 2) / @row-xl * 100%);
+    float: left;
+  }
+  // screen md
+  .col-md-@{i}{
+    width: ((@i * 100% / @n) - (@grid-gutter-width / @row-md *100%) );
+    margin: 0 ((@grid-gutter-width / 2) / @row-md * 100%);
+    float: left;
+
+  }
+  // screen xs
+  .col-xs-@{i}{
+    width: ((@i * 100% / @n) - (@grid-gutter-width / @row-xs *100%) );
+    margin: 0 ((@grid-gutter-width / 2) / @row-xs * 100%);
+    float: left;
+
+  }
+  .generate-columns(@n, (@i + 1));
+}
+
+
+
+
+@media screen and (max-width: @grid-float-breackpoint) {
+.generate-columns(@number-column);
+.generate-columns(@n, @i: 1) when (@i =< @n) {
+  .col-xl-@{i}, .col-md-@{i}, .col-xs-@{i} {
+    width: 98%;
+    margin-left: 1%;
+    margin-right: 1%;
+    float: none;
+  }
+  .generate-columns(@n, (@i + 1));
+}
+
+	.row-xl, .row-md, .row-xs, {
+		flex-direction: column;
+	}
+
+}
