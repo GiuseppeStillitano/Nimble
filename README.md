@@ -74,7 +74,7 @@ src:
 
 @grid-gutter-width: 20px;
 
-@grid-float-breackpoint: 767px;
+@grid-float-breakpoint: 767px;
 
 @row-md: 960px;
 @row-xl: 1001px;
@@ -84,9 +84,9 @@ src:
 @container-tablet: 768px;
 @container-phone: 320px;
 
-@backpoint-container-desktop: (@container-desktop - 1);
-@backpoint-container-tablet: (@container-tablet - 1);
-@backpoint-container-phone: (@container-phone - 1);
+@breakpoint-container-desktop: (@container-desktop - 1);
+@breakpoint-container-tablet: (@container-tablet - 1);
+@breakpoint-container-phone: (@container-phone - 1);
 ```
 ###Buttons
 ```
